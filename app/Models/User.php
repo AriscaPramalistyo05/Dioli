@@ -9,16 +9,17 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 
- 
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory, Notifiable;
-    
+
 
     protected $fillable = [
-        'name', // Tambahkan 'name' ke dalam $fillable
+        'name',
         'email',
         'password',
+        'usertype',
     ];
 
     protected $hidden = [

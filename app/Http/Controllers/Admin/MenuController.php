@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::all()->groupBy('kategori');
-        return view('admin.menu.index', compact('menus'));
+        return view('admin.menu.index-tailwind', compact('menus'));
     }
 
     /**
@@ -76,7 +76,7 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('admin.menu.edit', compact('menu'));
+        return view('admin.menu.edit-tailwind', compact('menu'));
     }
 
     /**

@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\KokiController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\FeedbackController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\PesanController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -29,7 +30,11 @@ use Illuminate\Http\Request;
 Route::get('/', [HomeController::class, "index"]);
 // Route::get('/admin/master', [AdminController::class, 'AdminDashboard'])->name('admin.master');
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+
+    // Dashboard Route
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard.index');
 
     // Route User
     Route::prefix('user')->group(function () {

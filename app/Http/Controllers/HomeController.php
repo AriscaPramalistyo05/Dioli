@@ -22,8 +22,7 @@ class HomeController extends Controller
 
         if ($usertype == '1') // Jika usertype adalah admin
         {
-            $data = User::all(); // Mengambil semua pengguna
-            return view('admin.adminmaster', compact('data'));
+            return redirect()->route('admin.dashboard');
         } else {
             return view('homepage');
         }

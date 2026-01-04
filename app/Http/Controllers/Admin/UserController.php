@@ -76,11 +76,13 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'password' => 'nullable|string|min:8|confirmed',
+            'usertype' => 'required|in:0,1',
         ]);
 
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->usertype = $request->usertype;
 
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);
