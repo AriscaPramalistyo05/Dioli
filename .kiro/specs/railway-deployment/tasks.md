@@ -7,7 +7,7 @@ Repository: https://github.com/AriscaPramalistyo05/Dioli.git
 
 ## Tasks
 
-- [-] 1. Persiapan Repository untuk Deployment
+- [x] 1. Persiapan Repository untuk Deployment
   - [x] 1.1 Buat file nixpacks.toml untuk Railway build configuration
     - Konfigurasi PHP 8.3 dengan extensions yang diperlukan
     - Setup composer install dan npm build
@@ -23,7 +23,7 @@ Repository: https://github.com/AriscaPramalistyo05/Dioli.git
     - Include storage/app/public/.gitkeep
     - _Requirements: 5.2_
 
-  - [-] 1.4 Push perubahan ke GitHub
+  - [x] 1.4 Push perubahan ke GitHub
     - Commit nixpacks.toml dan perubahan lainnya
     - Push ke branch main
     - _Requirements: 4.1_

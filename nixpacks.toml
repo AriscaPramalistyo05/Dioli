@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = [
+nixpkgs = [
     "php83", 
     "php83Extensions.pdo_mysql", 
     "php83Extensions.mbstring", 
@@ -8,20 +8,20 @@ nixPkgs = [
     "php83Extensions.gd",
     "php83Extensions.zip",
     "php83Extensions.bcmath",
-    "nodejs_20"
+    "nodejs-18_x"
 ]
 
 [phases.install]
 cmds = [
-    "composer install --no-dev --optimize-autoloader --no-interaction",
-    "npm ci",
+    "composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist",
+    "npm ci --only=production",
     "npm run build"
 ]
 
 [phases.build]
 cmds = [
     "php artisan config:cache",
-    "php artisan route:cache",
+    "php artisan route:cache", 
     "php artisan view:cache"
 ]
 
