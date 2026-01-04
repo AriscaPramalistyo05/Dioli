@@ -1,14 +1,14 @@
 [phases.setup]
-nixpkgs = [
-    "php83", 
-    "php83Extensions.pdo_mysql", 
-    "php83Extensions.mbstring", 
-    "php83Extensions.xml", 
-    "php83Extensions.curl", 
-    "php83Extensions.gd",
-    "php83Extensions.zip",
-    "php83Extensions.bcmath",
-    "nodejs-18_x"
+nixPkgs = [
+  "php82",
+  "php82Extensions.pdo_mysql",
+  "php82Extensions.mbstring",
+  "php82Extensions.xml",
+  "php82Extensions.curl",
+  "php82Extensions.gd",
+  "php82Extensions.zip",
+  "php82Extensions.bcmath",
+  "nodejs-18_x"
 ]
 
 [phases.install]
